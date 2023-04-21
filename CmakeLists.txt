@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.0)
+
+project("Bar Graph")
+
+find_package(fmt REQUIRED)

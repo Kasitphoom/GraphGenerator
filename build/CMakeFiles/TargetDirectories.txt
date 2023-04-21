@@ -1,0 +1,2 @@
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build/CMakeFiles/edit_cache.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build/CMakeFiles/rebuild_cache.dir
