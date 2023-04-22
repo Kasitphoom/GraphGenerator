@@ -1,0 +1,40 @@
+1Design Tasks
+	Write brief project concepts
+		Project objectives
+			- Produce a bar graph from data input
+		Features
+			- Can import data from text file
+
+
+	Write data spec
+		Configurations
+			- Have legends
+            - Have data lable
+            - Axis title
+
+		Data input (with optional grammar)
+			- CSV File
+
+		Data output (text format or display model)
+			- SVG
+
+	List program components (functions and classes)
+		- Class category ,writer
+        - Struct data
+	
+	List required software libraries
+		- fmt
+        - nse HTML
+	Draw class diagram for key classes (for presenting the design)
+
+	Write test cases for program components
+
+Implementation Tasks
+	Defining the data structure for programs
+	Defining the interfaces
+		Set of classes
+		Class member functions
+		Non-member functions
+	Defining test cases
+	Implement programs for test cases
+	Implement programs for project features

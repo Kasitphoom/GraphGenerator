@@ -1,0 +1,18 @@
+HEADER
+month, money spent
+jun, 100
+jun, 100
+feb, 200
+jun, 100
+
+
+                    HEADER
+jun|============|
+feb|========|
+   +--------|---|--------------------------|
+   0         
+
+counter
+name, count
+jun, 3
+jun, 2 
