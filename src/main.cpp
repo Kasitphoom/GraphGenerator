@@ -123,6 +123,11 @@ int main(int argc, char** argv) {
     for (const auto& data : datas) {
         std::cout << data.name << " " << data.value << std::endl;
     }
+    std::cout << "getDatasMap():" << std::endl;
+    std::map<std::string, double> datasMap = classified_info.getDatasMap();
+    for (const auto& data : datasMap) {
+        std::cout << data.first << " " << data.second << std::endl;
+    }
 
     return 0;
 }
