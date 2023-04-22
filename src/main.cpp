@@ -3,6 +3,7 @@
 #include<sstream>
 #include<string>
 #include<vector>
+#include<map>
 
 
 struct Data{
@@ -62,7 +63,19 @@ public:
         return datas;
     }
 
-    
+    std::map<std::string, double> getDatasMap() const {
+        std::map<std::string, double> datasMap;
+        for (const auto& data : datas) {
+            if (datasMap.find(data.name) != datasMap.end()) {
+                datasMap[data.name] += data.value;
+            }
+            else{
+                datasMap[data.name] = data.value;
+            }
+        }
+        return datasMap;
+    }
+
 };
 
 class BarGraph{
