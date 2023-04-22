@@ -5,11 +5,110 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bar graph</title>
+    <style>
+        :root{
+            --red : #E06C75;
+            --orange: #CC9564;
+            --yellow: #E5C07B;
+            --purple: #C678DD;
+        }
+
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "prompt", sans-serif;
+            height: 100vh;
+            width: 100vw;
+            background-color: #282C34;
+        }
+
+        :focus{
+            background-color: blue;
+        }
+        .graph-title{
+            text-anchor: middle;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        .axis-label{
+            position: relative;
+            text-anchor: middle;
+            font-size: 1.6rem;
+        }
+
+        .label-y{
+            transform-origin: center left;
+            transform: rotate(-90deg) translateY(1.6rem);
+        }
+
+        .red{
+            fill: var(--red);
+        }
+
+        .white{
+            fill: white;
+        }
+
+        .content{
+            font-size: 1.4rem;
+            text-anchor: middle;
+        }
+
+        .graph line{
+            fill: white;
+        }
+
+        .data{
+            fill: var(--purple);
+        }
+
+        .data-lable{
+            fill: var(--orange);
+        }
+    </style>
 </head>
 <body>
-    <svg width = "500" height = "500">
-        <text x = "50" y = "50" font-size = "20">0</text>
-        <line x1 = "50" y1 = "50" x2 = "50" y2 = "450" stroke = "black" stroke-width = "2"/>
+    <svg width = "550" height = "600" class="graph">
+        <text x = "275" y = "30" class="graph-title white">TITLE</text>
+        <text x = "275" y = "600" class="axis-label white">X-axis</text>
+        <text x = "0" y = "300" class="axis-label label-y white">Y-axis</text>
+        <text x = "40" y = "550" class="content red">0</text>
+        <text x = "40" y = "500" class="content red">10</text>
+        <text x = "40" y = "450" class="content red">20</text>
+        <text x = "40" y = "400" class="content red">30</text>
+        <text x = "40" y = "350" class="content red">40</text>
+        <text x = "40" y = "300" class="content red">50</text>
+        <text x = "40" y = "250" class="content red">60</text>
+        <text x = "40" y = "200" class="content red">70</text>
+        <text x = "40" y = "150" class="content red">80</text>
+        <text x = "40" y = "100" class="content red">90</text>
+        <text x = "40" y = "50" class="content red">100</text>
+
+        <rect x = "60" y = "500" width = "50" height = "50" class="data"/>
+        <text x = "85" y = "570" class="content data-lable">first</text>
+        <rect x = "120" y = "450" width = "50" height = "100" class="data"/>
+        <text x = "145" y = "570" class="content data-lable">second</text>
+        <rect x = "180" y = "400" width = "50" height = "150" class="data"/>
+        <text x = "205" y = "570" class="content data-lable">third</text>
+        <rect x = "240" y = "350" width = "50" height = "200" class="data"/>
+        <text x = "265" y = "570" class="content data-lable">fourth</text>
+        <rect x = "300" y = "300" width = "50" height = "250" class="data"/>
+        <text x = "325" y = "570" class="content data-lable">fifth</text>
+        <rect x = "360" y = "250" width = "50" height = "300" class="data"/>
+        <text x = "385" y = "570" class="content data-lable">sixth</text>
+        <rect x = "420" y = "200" width = "50" height = "350" class="data"/>
+        <text x = "445" y = "570" class="content data-lable">seventh</text>
+        <rect x = "480" y = "150" width = "50" height = "400" class="data"/>
+        <text x = "505" y = "570" class="content data-lable">eighth</text>
+
+
+        <line x1 = "60" y1 = "50" x2 = "60" y2 = "550" stroke = "white" stroke-width = "2"/>
+        <line x1 = "60" y1 = "550" x2 = "550" y2 = "550" stroke = "white" stroke-width = "2"/>
     </svg>
 </body>
 </html>
