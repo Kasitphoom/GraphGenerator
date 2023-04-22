@@ -43,7 +43,10 @@ std::vector<std::string> readDataFromCSV(const std::string& filename) {
     return lines;
 }
 
-int main() {
+int main(int argc, char** argv) {
+
+    char* path = argv[1];
+
     std::vector<std::string> lines = readDataFromCSV("../data.csv");
 
     // print out the lines
