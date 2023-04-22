@@ -19,7 +19,7 @@
 			- SVG
 
 	List program components (functions and classes)
-		- Class category ,writer
+		- Class category, writer, graph
         - Struct data
 	
 	List required software libraries

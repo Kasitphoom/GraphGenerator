@@ -1,18 +1,13 @@
 HEADER
 month, money spent
-jun, 100
-jun, 100
+month, money spent
+jan, 150
 feb, 200
+apr, 75
+may, 300
 jun, 100
-
-
-                    HEADER
-jun|============|
-feb|========|
-   +--------|---|--------------------------|
-   0         
-
-counter
-name, count
-jun, 3
-jun, 2 
+jun, 100
+aug, 225
+sep, 175
+nov, 50
+dec, 400
