@@ -10,7 +10,11 @@ struct Data{
     double value;
 };
 
-class Category {
+class Category{
+
+};
+
+class Classified_Info {
 private:
     std::string name;
     std::string x_axis;
@@ -18,7 +22,7 @@ private:
     std::vector<Data> datas;
 
 public:
-    Category(const std::vector<std::string>& csvData) {
+    Classified_Info(const std::vector<std::string>& csvData) {
         // get the header and split it into name, x_axis, and y_axis
         std::string header = csvData[0];
         name = header;
@@ -57,6 +61,8 @@ public:
     std::vector<Data> getDatas() const {
         return datas;
     }
+
+    
 };
 
 class BarGraph{
@@ -94,12 +100,12 @@ int main(int argc, char** argv) {
     }
 
     std::cout << "======================Earth's_test_chamber======================" << std::endl;
-    Category category(lines);
+    Classified_Info classified_info(lines);
     std::cout << "--------------------Testing Object--------------------" << std::endl;
-    std::cout << "getName():" << category.getName() << std::endl;
-    std::cout << "getXAxis()" << category.getXAxis() << std::endl;
-    std::cout << "getYAxis()" << category.getYAxis() << std::endl;
-    std::vector<Data> datas = category.getDatas();
+    std::cout << "getName():" << classified_info.getName() << std::endl;
+    std::cout << "getXAxis()" << classified_info.getXAxis() << std::endl;
+    std::cout << "getYAxis()" << classified_info.getYAxis() << std::endl;
+    std::vector<Data> datas = classified_info.getDatas();
     std::cout << "getDatas():" << std::endl;
     for (const auto& data : datas) {
         std::cout << data.name << " " << data.value << std::endl;
