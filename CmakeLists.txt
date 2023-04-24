@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
-project("Bar Graph")
+project("GraphGenerator")
 
-find_package(fmt REQUIRED)
+add_executable(${PROJECT_NAME} src/main.cpp)
+add_executable(${PROJECT_NAME}_test test/test.cpp)
+
