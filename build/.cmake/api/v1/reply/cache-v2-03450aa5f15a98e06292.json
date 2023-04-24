@@ -959,7 +959,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Bar Graph"
+			"value" : "GraphGenerator"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1336,6 +1336,42 @@
 			],
 			"type" : "BOOL",
 			"value" : "FALSE"
+		},
+		{
+			"name" : "GraphGenerator_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build"
+		},
+		{
+			"name" : "GraphGenerator_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "GraphGenerator_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart"
 		},
 		{
 			"name" : "Project_BINARY_DIR",

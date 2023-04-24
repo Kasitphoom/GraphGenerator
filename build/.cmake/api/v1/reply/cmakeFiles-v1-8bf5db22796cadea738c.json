@@ -144,22 +144,6 @@
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "D:/Package/lib/cmake/fmt/fmt-config-version.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "D:/Package/lib/cmake/fmt/fmt-config.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "D:/Package/lib/cmake/fmt/fmt-targets.cmake"
-		},
-		{
-			"isExternal" : true,
-			"path" : "D:/Package/lib/cmake/fmt/fmt-targets-release.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",

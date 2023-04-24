@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Bar Graph
+# Project: GraphGenerator
 # Configurations: Debug
 # =============================================================================
 
@@ -40,6 +40,72 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/build/
+# =============================================================================
+# Object build statements for EXECUTABLE target GraphGenerator
+
+
+#############################################
+# Order-only phony target for GraphGenerator
+
+build cmake_object_order_depends_target_GraphGenerator: phony || CMakeFiles/GraphGenerator.dir
+
+build CMakeFiles/GraphGenerator.dir/src/main.cpp.obj: CXX_COMPILER__GraphGenerator_Debug C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/src/main.cpp || cmake_object_order_depends_target_GraphGenerator
+  DEP_FILE = CMakeFiles\GraphGenerator.dir\src\main.cpp.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\GraphGenerator.dir
+  OBJECT_FILE_DIR = CMakeFiles\GraphGenerator.dir\src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target GraphGenerator
+
+
+#############################################
+# Link the executable GraphGenerator.exe
+
+build GraphGenerator.exe: CXX_EXECUTABLE_LINKER__GraphGenerator_Debug CMakeFiles/GraphGenerator.dir/src/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\GraphGenerator.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = GraphGenerator.exe
+  TARGET_IMPLIB = libGraphGenerator.dll.a
+  TARGET_PDB = GraphGenerator.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target GraphGenerator_test
+
+
+#############################################
+# Order-only phony target for GraphGenerator_test
+
+build cmake_object_order_depends_target_GraphGenerator_test: phony || CMakeFiles/GraphGenerator_test.dir
+
+build CMakeFiles/GraphGenerator_test.dir/test/test.cpp.obj: CXX_COMPILER__GraphGenerator_test_Debug C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/test/test.cpp || cmake_object_order_depends_target_GraphGenerator_test
+  DEP_FILE = CMakeFiles\GraphGenerator_test.dir\test\test.cpp.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\GraphGenerator_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\GraphGenerator_test.dir\test
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target GraphGenerator_test
+
+
+#############################################
+# Link the executable GraphGenerator_test.exe
+
+build GraphGenerator_test.exe: CXX_EXECUTABLE_LINKER__GraphGenerator_test_Debug CMakeFiles/GraphGenerator_test.dir/test/test.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\GraphGenerator_test.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = GraphGenerator_test.exe
+  TARGET_IMPLIB = libGraphGenerator_test.dll.a
+  TARGET_PDB = GraphGenerator_test.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -67,6 +133,10 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build GraphGenerator: phony GraphGenerator.exe
+
+build GraphGenerator_test: phony GraphGenerator_test.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -75,7 +145,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build
 
-build all: phony
+build all: phony GraphGenerator.exe GraphGenerator_test.exe
 
 # =============================================================================
 # Unknown Build Time Dependencies.
@@ -89,14 +159,14 @@ build all: phony
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake D$:/Package/lib/cmake/fmt/fmt-config-version.cmake D$:/Package/lib/cmake/fmt/fmt-config.cmake D$:/Package/lib/cmake/fmt/fmt-targets-release.cmake D$:/Package/lib/cmake/fmt/fmt-targets.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake D$:/Package/lib/cmake/fmt/fmt-config-version.cmake D$:/Package/lib/cmake/fmt/fmt-config.cmake D$:/Package/lib/cmake/fmt/fmt-targets-release.cmake D$:/Package/lib/cmake/fmt/fmt-targets.cmake: phony
+build C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake: phony
 
 
 #############################################
