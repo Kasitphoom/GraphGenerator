@@ -12,6 +12,12 @@ struct Data
 {
     std::string name;
     double value;
+
+    Data(const std::string &name, double value) : name(name), value(value) {}
+    bool operator==(const Data &other) const
+    {
+        return name == other.name && value == other.value;
+    }
 };
 
 class Category
@@ -34,11 +40,18 @@ public:
         name = header;
         std::string xy_axis = csvData[1];
         std::istringstream XY_axisStream(xy_axis);
-        std::string col1, col2;
-        std::getline(XY_axisStream, col1, ',');
-        XY_axisStream >> col2;
-        x_axis = col1;
-        y_axis = col2;
+
+        std::vector<std::string> xy_axisVector;
+
+        std::string temp;
+        while(std::getline(XY_axisStream, temp, ',')){
+            temp = temp[0] == ' ' ? temp.substr(1) : temp;
+            xy_axisVector.push_back(temp);
+        }
+        temp.clear();
+
+        x_axis = xy_axisVector[0];
+        y_axis = xy_axisVector[1];
 
         // loop over the data rows and create Data objects for each row
         for (size_t i = 2; i < csvData.size(); i++)
