@@ -1,11 +1,11 @@
 # ninja log v5
-4	1220	7040248565419603	CMakeFiles/GraphGenerator.dir/src/main.cpp.obj	41589654df33e94d
-1233	1480	7040248567959415	GraphGenerator.exe	4fc403bc0aeb0ce
-21	5833	7040248611487805	CMakeFiles/GraphGenerator_test.dir/test/test.cpp.obj	f30c38c2155a7b29
-5835	6682	7040248619978975	GraphGenerator_test.exe	9bd094aa5d3db4ed
-6	5753	7040255050968638	CMakeFiles/GraphGenerator_test.dir/test/test.cpp.obj	f30c38c2155a7b29
-5754	6628	7040255059721790	GraphGenerator_test.exe	9bd094aa5d3db4ed
 10	1205	7040296703774758	CMakeFiles/GraphGenerator.dir/src/main.cpp.obj	41589654df33e94d
 1206	1495	7040296706600408	GraphGenerator.exe	4fc403bc0aeb0ce
 39	6591	7040296757613844	CMakeFiles/GraphGenerator_test.dir/test/test.cpp.obj	f30c38c2155a7b29
 6592	7657	7040296768255896	GraphGenerator_test.exe	9bd094aa5d3db4ed
+7	2260	7045403289600865	CMakeFiles/GraphGenerator.dir/src/main.cpp.obj	41589654df33e94d
+52	2514	7045403292157385	CMakeFiles/testhtml.dir/test/htmltester.cpp.obj	7f81716e9553df69
+2261	2907	7045403295963498	GraphGenerator.exe	4fc403bc0aeb0ce
+2514	3233	7045403299308745	testhtml.exe	9339497d5e5ce6b
+29	6667	7045403333624727	CMakeFiles/GraphGenerator_test.dir/test/test.cpp.obj	f30c38c2155a7b29
+6668	8581	7045403352773709	GraphGenerator_test.exe	9bd094aa5d3db4ed

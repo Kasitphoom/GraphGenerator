@@ -106,6 +106,39 @@ build GraphGenerator_test.exe: CXX_EXECUTABLE_LINKER__GraphGenerator_test_Debug 
   TARGET_IMPLIB = libGraphGenerator_test.dll.a
   TARGET_PDB = GraphGenerator_test.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target testhtml
+
+
+#############################################
+# Order-only phony target for testhtml
+
+build cmake_object_order_depends_target_testhtml: phony || CMakeFiles/testhtml.dir
+
+build CMakeFiles/testhtml.dir/test/htmltester.cpp.obj: CXX_COMPILER__testhtml_Debug C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/test/htmltester.cpp || cmake_object_order_depends_target_testhtml
+  DEP_FILE = CMakeFiles\testhtml.dir\test\htmltester.cpp.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\testhtml.dir
+  OBJECT_FILE_DIR = CMakeFiles\testhtml.dir\test
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target testhtml
+
+
+#############################################
+# Link the executable testhtml.exe
+
+build testhtml.exe: CXX_EXECUTABLE_LINKER__testhtml_Debug CMakeFiles/testhtml.dir/test/htmltester.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\testhtml.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = testhtml.exe
+  TARGET_IMPLIB = libtesthtml.dll.a
+  TARGET_PDB = testhtml.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -137,6 +170,8 @@ build GraphGenerator: phony GraphGenerator.exe
 
 build GraphGenerator_test: phony GraphGenerator_test.exe
 
+build testhtml: phony testhtml.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -145,7 +180,7 @@ build GraphGenerator_test: phony GraphGenerator_test.exe
 #############################################
 # Folder: C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build
 
-build all: phony GraphGenerator.exe GraphGenerator_test.exe
+build all: phony GraphGenerator.exe GraphGenerator_test.exe testhtml.exe
 
 # =============================================================================
 # Unknown Build Time Dependencies.
