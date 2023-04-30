@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <cmath>
 #include "../lib/nse/html.hpp"
 #include "../lib/nse/ptr.hpp"
 #include "../lib/nse/html.cpp"
@@ -140,6 +141,8 @@ private:
     std::map<std::string, double> data;
     std::vector<std::vector<double>> barPts;
     std::vector<std::vector<double>> yaxisvlauePts;
+    std::vector<std::vector<double>> xaxisvlauePts;
+    std::vector<std::vector<double>> realValuePts;
 
     std::string title;
     std::string xLabel;
@@ -150,12 +153,14 @@ private:
     double yheight;
     double xwidth;
 
-    double* hlinePts;
-    double* vlinePts;
-    double* xLablePts;
-    double* yLablePts;
+    std::vector<double> hlinePts;
+    std::vector<double> vlinePts;
+    std::vector<double> xLablePts;
+    std::vector<double> yLablePts;
 
-    std::vector<double> axisValues;
+    std::vector<double> yaxisValues;
+    std::vector<double> realValues;
+    std::vector<std::string> xaxisValues;
 
 public:
     BarGraph(const std::map<std::string, double> &data, std::string title, std::string xLable, std::string yLable)
@@ -166,22 +171,31 @@ public:
         this->xLabel = xLable;
         this->yLabel = yLable;
 
+        hlinePts.resize(4);
+        vlinePts.resize(4);
+        xLablePts.resize(2);
+        yLablePts.resize(2);
+
         calcWidth();
-        CalculateAxisValue();
+        YAxisValue();
+        XAxisValue();
+        RealValue();
         calcHLinePts();
         calcVLinePts();
         calcXLablePts();
         calcYLablePts();
         calcBarPts();
         calcYAxisValuePts();
+        calcXAxisValuePts();
+        calcRealValuePts();
 
     }
     BarGraph() = delete;
     ~BarGraph(){
-        delete[] this->hlinePts;
-        delete[] this->vlinePts;
-        delete[] this->xLablePts;
-        delete[] this->yLablePts;
+        this->hlinePts.clear();
+        this->vlinePts.clear();
+        this->xLablePts.clear();
+        this->yLablePts.clear();
     }
 
     double find_max_value(){
@@ -194,18 +208,37 @@ public:
         return max;
     }
 
-    void CalculateAxisValue(){
+    void YAxisValue(){
         std::vector<double> axisValues;
         double max = find_max_value();
         double step = max / 10;
         for (int i = 0; i < 11; i++){
             axisValues.push_back(step * i);
         }
-        this->axisValues = axisValues;
+        this->yaxisValues = axisValues;
+    }
+
+    void XAxisValue(){
+        std::vector<std::string> xaxisvlaue ;
+        auto it = this->data.begin();
+        for (int i = 0; i < this->data.size(); i++){
+            xaxisvlaue.push_back(it->first);
+            it++;
+        }
+        this->xaxisValues = xaxisvlaue;
+    }
+
+    void RealValue(){
+        std::vector<double> realValues;
+        auto it = this->data.begin();
+        for (int i = 0; i < this->data.size(); i++){
+            realValues.push_back(it->second);
+            it++;
+        }
+        this->realValues = realValues;
     }
 
     void calcHLinePts(){
-        this->hlinePts = new double[4];
         this->hlinePts[0] = this->X_GRAPH_PADDING; //x1
         this->hlinePts[1] = this->height - this->Y_GRAPH_PADDING; //y1
         this->hlinePts[2] = this->width; //x2
@@ -213,21 +246,18 @@ public:
     }
 
     void calcVLinePts(){
-        this->vlinePts = new double[4];
         this->vlinePts[0] = this->X_GRAPH_PADDING; //x1
         this->vlinePts[1] = this->height - this->Y_GRAPH_PADDING; //y1
         this->vlinePts[2] = this->X_GRAPH_PADDING; //x2
-        this->vlinePts[3] = 0; //y2
+        this->vlinePts[3] = this->Y_GRAPH_PADDING; //y2
     }
 
     void calcXLablePts(){
-        this->xLablePts = new double[2];
         this->xLablePts[0] = this->width / 2; //x1
         this->xLablePts[1] = this->height - 15; //y1
     }
 
     void calcYLablePts(){
-        this->yLablePts = new double[2];
         this->yLablePts[0] = this->X_GRAPH_PADDING / 2; //x1
         this->yLablePts[1] = this->height / 2; //y1
     }
@@ -236,22 +266,22 @@ public:
         std::vector<std::vector<double>> barPts;
         double x = this->X_GRAPH_PADDING;
         double y = this->height - this->Y_GRAPH_PADDING;
-        double barWidth = (this->width - this->X_GRAPH_PADDING) / this->data.size() - this->BAR_MARGIN;
-        double barHeight = 0;
+        double step = 50 + this->BAR_MARGIN;
+        double barWidth = step - this->BAR_MARGIN;
         for (const auto &data : this->data){
-            barHeight = data.second / find_max_value() * (this->height - this->Y_GRAPH_PADDING);
+            double barHeight = data.second / find_max_value() * (this->height - 2 * this->Y_GRAPH_PADDING);
             std::vector<double> barPt = {x, y, barWidth, barHeight};
             barPts.push_back(barPt);
-            x += barWidth + this->BAR_MARGIN;
+            x += step;
         }
         this->barPts = barPts;
     }
 
     void calcYAxisValuePts(){
         std::vector<std::vector<double>> yaxisavluePts;
-        double x = this->X_GRAPH_PADDING / 2;
+        double x = 40;
         double y = this->height - this->Y_GRAPH_PADDING;
-        double step = (this->height - this->Y_GRAPH_PADDING) / 10;
+        double step = 50;
         for (int i = 0; i < 11; i++){
             std::vector<double> yaxisavluePt = {x, y};
             yaxisavluePts.push_back(yaxisavluePt);
@@ -260,9 +290,38 @@ public:
         this->yaxisvlauePts = yaxisavluePts;
     }
 
-    std::vector<double> getAxisValues() const
+    void calcXAxisValuePts(){
+        std::vector<std::vector<double>> xaxisavluePts;
+        double x = this->X_GRAPH_PADDING + 25; // 25 is the half of the bar width
+        double y = this->height - 30;
+        double step = 50 + this->BAR_MARGIN;
+        for (int i = 0; i < this->data.size(); i++){
+            std::vector<double> xaxisavluePt = {x, y};
+            xaxisavluePts.push_back(xaxisavluePt);
+            x += step;
+        }
+        this->xaxisvlauePts = xaxisavluePts;
+    }
+
+    void calcRealValuePts(){
+        std::vector<std::vector<double>> realValuePts;
+        for (int i = 0; i < this->data.size(); i++){
+            double x = this->barPts[i][0] + this->barPts[i][2] / 2;
+            double y = this->barPts[i][1] - this->barPts[i][3] - 10;
+            std::vector<double> realValuePt = {x, y};
+            realValuePts.push_back(realValuePt);
+        }
+        this->realValuePts = realValuePts;
+    }
+
+    std::vector<double> getyAxisValues() const
     {
-        return axisValues;
+        return yaxisValues;
+    }
+
+    std::vector<std::string> getxAxisValues() const
+    {
+        return xaxisValues;
     }
 
     void calcWidth(){
@@ -304,26 +363,44 @@ public:
         return barPts;
     }
 
-    double* getHLinePts() const
+    std::vector<double> getHLinePts() const
     {
         return hlinePts;
     }
 
-    double* getVLinePts() const
+    std::vector<double> getVLinePts() const
     {
         return vlinePts;
     }
 
-    double* getXLablePts() const
+    std::vector<double> getXLablePts() const
     {
         return xLablePts;
     }
 
-    double* getYLablePts() const
+    std::vector<double> getYLablePts() const
     {
         return yLablePts;
     }
 
+    std::vector<std::vector<double>> getYaxisvlauePts() const
+    {
+        return yaxisvlauePts;
+    }
+
+    std::vector<std::vector<double>> getXaxisvlauePts() const
+    {
+        return xaxisvlauePts;
+    }
+
+    std::vector<std::vector<double>> getRealValuePts() const
+    {
+        return realValuePts;
+    }
+
+    std::vector<double> getRealValue(){
+        return realValues;
+    }
 };
 
 void GenHTML(BarGraph bg, std::string file){
@@ -337,6 +414,9 @@ void GenHTML(BarGraph bg, std::string file){
     std::cout.rdbuf(out.rdbuf());
 
     std::cout << "<!DOCTYPE html>\n";
+
+    auto graph_title = Element("text", {{"x", std::to_string(bg.getXLablePts()[0])}, {"y", std::to_string(25)}, {"fill", "white"}, {"class", "graph-title white"}}, {Element::text(bg.getTitle())});
+    svg_elems.push_back(graph_title);
 
     auto xline = Element("line", {{"x1", std::to_string(bg.getHLinePts()[0])}, {"y1", std::to_string(bg.getHLinePts()[1])}, {"x2", std::to_string(bg.getHLinePts()[2])}, {"y2", std::to_string(bg.getHLinePts()[3])}, {"stroke", "white"}, {"stroke-width", "2"}}, {Element::text("")});
     svg_elems.push_back(xline);
@@ -355,9 +435,25 @@ void GenHTML(BarGraph bg, std::string file){
         svg_elems.push_back(bar);
     }
 
-    auto svg = Element("svg", {{"width", std::to_string(bg.getWidth())}, {"height", std::to_string(bg.getHeight())}}, svg_elems);
+    for(int i = 0; i < bg.getyAxisValues().size(); i++){
+        auto yaxisvalue = Element("text", {{"x", std::to_string(bg.getYaxisvlauePts()[i][0])}, {"y", std::to_string(bg.getYaxisvlauePts()[i][1])}, {"fill", "white"}, {"class", "content red"}}, {Element::text(std::to_string((int)bg.getyAxisValues()[i]))});
+        svg_elems.push_back(yaxisvalue);
+    }
 
-    auto body = Element("body", {{"background-color", "#282C34"}}, {svg});
+    for(int i = 0; i < bg.getxAxisValues().size(); i++){
+        auto xaxisvalue = Element("text", {{"x", std::to_string(bg.getXaxisvlauePts()[i][0])}, {"y", std::to_string(bg.getXaxisvlauePts()[i][1])}, {"fill", "white"}, {"class", "content data-lable cat"}}, {Element::text(bg.getxAxisValues()[i])});
+        svg_elems.push_back(xaxisvalue);
+    }
+
+    for(int i = 0; i < bg.getRealValue().size(); i++){
+        auto realvalue = Element("text", {{"x", std::to_string(bg.getRealValuePts()[i][0])}, {"y", std::to_string(bg.getRealValuePts()[i][1])}, {"fill", "white"}, {"class", "content data-lable"}}, {Element::text(std::to_string((int)bg.getRealValue()[i]))});
+        svg_elems.push_back(realvalue);
+    }
+
+    auto svg = Element("svg", {{"width", std::to_string(bg.getWidth())}, {"height", std::to_string(bg.getHeight())}}, svg_elems);
+    auto script = Element("script", {{"src", "../src/script.js"}}, {Element::text("")});
+
+    auto body = Element("body", {{"background-color", "#282C34"}}, {svg, script});
 
     auto link_css = Element("link", {{"rel", "stylesheet"}, {"href", "../src/style.css"}}, {Element::text("")});
     auto head = Element("head", {}, {Element("title", {}, {Element::text(bg.getTitle())}), link_css});

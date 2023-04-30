@@ -22,27 +22,9 @@ int main(int argc, char** argv) {
 
     std::vector<std::string> lines = readDataFromCSV(path);
 
-    // print out the lines
-    for (const auto& line : lines) {
-        std::cout << line << std::endl;
-    }
-
-    std::cout << "======================Earth's_test_chamber======================" << std::endl;
     Classified_Info classified_info(lines);
-    std::cout << "--------------------Testing Object--------------------" << std::endl;
-    std::cout << "getName():" << classified_info.getName() << std::endl;
-    std::cout << "getXAxis()" << classified_info.getXAxis() << std::endl;
-    std::cout << "getYAxis()" << classified_info.getYAxis() << std::endl;
-    std::vector<Data> datas = classified_info.getDatas();
-    std::cout << "getDatas():" << std::endl;
-    for (const auto& data : datas) {
-        std::cout << data.name << " " << data.value << std::endl;
-    }
-    std::cout << "getDatasMap():" << std::endl;
-    std::map<std::string, double> datasMap = classified_info.getDatasMap();
-    for (const auto& data : datasMap) {
-        std::cout << data.first << " " << data.second << std::endl;
-    }
+    BarGraph bargraph(classified_info.getDatasMap(), classified_info.getName(), classified_info.getXAxis(), classified_info.getYAxis());
+    GenHTML(bargraph, "Bargraph.html");
 
     return 0;
 }

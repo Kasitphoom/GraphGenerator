@@ -37,5 +37,5 @@ TEST_CASE("Checking Bargraph Correctness"){
     CHECK(bargraph.getXLabel() == "month");
     CHECK(bargraph.getYLabel() == "money spent");
     CHECK(bargraph.getWidth() == 120);
-    CHECK(bargraph.getAxisValues() == std::vector<double> {0, 35, 70, 105, 140, 175, 210, 245, 280, 315, 350});
+    CHECK(bargraph.getyAxisValues() == std::vector<double> {0, 35, 70, 105, 140, 175, 210, 245, 280, 315, 350});
 }
