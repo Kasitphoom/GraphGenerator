@@ -2,6 +2,18 @@ cmake_minimum_required(VERSION 3.0)
 
 project("GraphGenerator")
 
+include_directories(lib)
+
+add_library(nse lib/nse/html.cpp lib/nse/html.hpp)
+add_library(doctest lib/doctest/doctest.h)
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/test/testdata.csv DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 add_executable(${PROJECT_NAME} src/main.cpp)
 add_executable(${PROJECT_NAME}_test test/test.cpp)
 add_executable(testhtml test/htmltester.cpp)
+
+set_target_properties(doctest PROPERTIES LINKER_LANGUAGE CXX)
+
+target_link_libraries(${PROJECT_NAME} nse)
+target_link_libraries(${PROJECT_NAME}_test doctest)

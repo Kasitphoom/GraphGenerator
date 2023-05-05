@@ -1,3 +1,5 @@
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build/CMakeFiles/nse.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build/CMakeFiles/doctest.dir
 C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build/CMakeFiles/GraphGenerator.dir
 C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build/CMakeFiles/GraphGenerator_test.dir
 C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build/CMakeFiles/testhtml.dir

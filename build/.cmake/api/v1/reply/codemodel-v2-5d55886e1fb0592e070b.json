@@ -1,0 +1,96 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "GraphGenerator",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "GraphGenerator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GraphGenerator-Debug-780fdc796afa435a9926.json",
+					"name" : "GraphGenerator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "GraphGenerator_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GraphGenerator_test-Debug-c7ca9126a6fec8b66f2f.json",
+					"name" : "GraphGenerator_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "doctest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-doctest-Debug-6ad8b110aaac2f2d5309.json",
+					"name" : "doctest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nse::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nse-Debug-6825f8cdfe7f0a817d5f.json",
+					"name" : "nse",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "testhtml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-testhtml-Debug-5139edfb5ca7f393b143.json",
+					"name" : "testhtml",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build",
+		"source" : "C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

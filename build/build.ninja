@@ -41,17 +41,75 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/build/
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target nse
+
+
+#############################################
+# Order-only phony target for nse
+
+build cmake_object_order_depends_target_nse: phony || CMakeFiles/nse.dir
+
+build CMakeFiles/nse.dir/lib/nse/html.cpp.obj: CXX_COMPILER__nse_Debug C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/lib/nse/html.cpp || cmake_object_order_depends_target_nse
+  DEP_FILE = CMakeFiles\nse.dir\lib\nse\html.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -I"C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/lib"
+  OBJECT_DIR = CMakeFiles\nse.dir
+  OBJECT_FILE_DIR = CMakeFiles\nse.dir\lib\nse
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target nse
+
+
+#############################################
+# Link the static library libnse.a
+
+build libnse.a: CXX_STATIC_LIBRARY_LINKER__nse_Debug CMakeFiles/nse.dir/lib/nse/html.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\nse.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = libnse.a
+  TARGET_PDB = nse.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target doctest
+
+
+#############################################
+# Order-only phony target for doctest
+
+build cmake_object_order_depends_target_doctest: phony || CMakeFiles/doctest.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target doctest
+
+
+#############################################
+# Link the static library libdoctest.a
+
+build libdoctest.a: CXX_STATIC_LIBRARY_LINKER__doctest_Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\doctest.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = libdoctest.a
+  TARGET_PDB = doctest.a.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target GraphGenerator
 
 
 #############################################
 # Order-only phony target for GraphGenerator
 
-build cmake_object_order_depends_target_GraphGenerator: phony || CMakeFiles/GraphGenerator.dir
+build cmake_object_order_depends_target_GraphGenerator: phony || cmake_object_order_depends_target_nse
 
 build CMakeFiles/GraphGenerator.dir/src/main.cpp.obj: CXX_COMPILER__GraphGenerator_Debug C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/src/main.cpp || cmake_object_order_depends_target_GraphGenerator
   DEP_FILE = CMakeFiles\GraphGenerator.dir\src\main.cpp.obj.d
   FLAGS = -g
+  INCLUDES = -I"C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/lib"
   OBJECT_DIR = CMakeFiles\GraphGenerator.dir
   OBJECT_FILE_DIR = CMakeFiles\GraphGenerator.dir\src
 
@@ -63,9 +121,9 @@ build CMakeFiles/GraphGenerator.dir/src/main.cpp.obj: CXX_COMPILER__GraphGenerat
 #############################################
 # Link the executable GraphGenerator.exe
 
-build GraphGenerator.exe: CXX_EXECUTABLE_LINKER__GraphGenerator_Debug CMakeFiles/GraphGenerator.dir/src/main.cpp.obj
+build GraphGenerator.exe: CXX_EXECUTABLE_LINKER__GraphGenerator_Debug CMakeFiles/GraphGenerator.dir/src/main.cpp.obj | libnse.a || libnse.a
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = libnse.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\GraphGenerator.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -80,11 +138,12 @@ build GraphGenerator.exe: CXX_EXECUTABLE_LINKER__GraphGenerator_Debug CMakeFiles
 #############################################
 # Order-only phony target for GraphGenerator_test
 
-build cmake_object_order_depends_target_GraphGenerator_test: phony || CMakeFiles/GraphGenerator_test.dir
+build cmake_object_order_depends_target_GraphGenerator_test: phony || cmake_object_order_depends_target_doctest
 
 build CMakeFiles/GraphGenerator_test.dir/test/test.cpp.obj: CXX_COMPILER__GraphGenerator_test_Debug C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/test/test.cpp || cmake_object_order_depends_target_GraphGenerator_test
   DEP_FILE = CMakeFiles\GraphGenerator_test.dir\test\test.cpp.obj.d
   FLAGS = -g
+  INCLUDES = -I"C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/lib"
   OBJECT_DIR = CMakeFiles\GraphGenerator_test.dir
   OBJECT_FILE_DIR = CMakeFiles\GraphGenerator_test.dir\test
 
@@ -96,9 +155,9 @@ build CMakeFiles/GraphGenerator_test.dir/test/test.cpp.obj: CXX_COMPILER__GraphG
 #############################################
 # Link the executable GraphGenerator_test.exe
 
-build GraphGenerator_test.exe: CXX_EXECUTABLE_LINKER__GraphGenerator_test_Debug CMakeFiles/GraphGenerator_test.dir/test/test.cpp.obj
+build GraphGenerator_test.exe: CXX_EXECUTABLE_LINKER__GraphGenerator_test_Debug CMakeFiles/GraphGenerator_test.dir/test/test.cpp.obj | libdoctest.a || libdoctest.a
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = libdoctest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\GraphGenerator_test.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -118,6 +177,7 @@ build cmake_object_order_depends_target_testhtml: phony || CMakeFiles/testhtml.d
 build CMakeFiles/testhtml.dir/test/htmltester.cpp.obj: CXX_COMPILER__testhtml_Debug C$:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar$ chart/test/htmltester.cpp || cmake_object_order_depends_target_testhtml
   DEP_FILE = CMakeFiles\testhtml.dir\test\htmltester.cpp.obj.d
   FLAGS = -g
+  INCLUDES = -I"C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/lib"
   OBJECT_DIR = CMakeFiles\testhtml.dir
   OBJECT_FILE_DIR = CMakeFiles\testhtml.dir\test
 
@@ -170,6 +230,10 @@ build GraphGenerator: phony GraphGenerator.exe
 
 build GraphGenerator_test: phony GraphGenerator_test.exe
 
+build doctest: phony libdoctest.a
+
+build nse: phony libnse.a
+
 build testhtml: phony testhtml.exe
 
 # =============================================================================
@@ -180,7 +244,7 @@ build testhtml: phony testhtml.exe
 #############################################
 # Folder: C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build
 
-build all: phony GraphGenerator.exe GraphGenerator_test.exe testhtml.exe
+build all: phony libnse.a libdoctest.a GraphGenerator.exe GraphGenerator_test.exe testhtml.exe
 
 # =============================================================================
 # Unknown Build Time Dependencies.

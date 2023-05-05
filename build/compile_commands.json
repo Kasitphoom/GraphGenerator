@@ -1,17 +1,22 @@
 [
 {
   "directory": "C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build",
-  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -g -o CMakeFiles\\GraphGenerator.dir\\src\\main.cpp.obj -c \"C:\\Users\\Phoom\\Desktop\\homework\\KMITL\\OOP\\PRACTICAL\\bar chart\\src\\main.cpp\"",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -I\"C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/lib\" -g -o CMakeFiles\\nse.dir\\lib\\nse\\html.cpp.obj -c \"C:\\Users\\Phoom\\Desktop\\homework\\KMITL\\OOP\\PRACTICAL\\bar chart\\lib\\nse\\html.cpp\"",
+  "file": "C:\\Users\\Phoom\\Desktop\\homework\\KMITL\\OOP\\PRACTICAL\\bar chart\\lib\\nse\\html.cpp"
+},
+{
+  "directory": "C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -I\"C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/lib\" -g -o CMakeFiles\\GraphGenerator.dir\\src\\main.cpp.obj -c \"C:\\Users\\Phoom\\Desktop\\homework\\KMITL\\OOP\\PRACTICAL\\bar chart\\src\\main.cpp\"",
   "file": "C:\\Users\\Phoom\\Desktop\\homework\\KMITL\\OOP\\PRACTICAL\\bar chart\\src\\main.cpp"
 },
 {
   "directory": "C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build",
-  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -g -o CMakeFiles\\GraphGenerator_test.dir\\test\\test.cpp.obj -c \"C:\\Users\\Phoom\\Desktop\\homework\\KMITL\\OOP\\PRACTICAL\\bar chart\\test\\test.cpp\"",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -I\"C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/lib\" -g -o CMakeFiles\\GraphGenerator_test.dir\\test\\test.cpp.obj -c \"C:\\Users\\Phoom\\Desktop\\homework\\KMITL\\OOP\\PRACTICAL\\bar chart\\test\\test.cpp\"",
   "file": "C:\\Users\\Phoom\\Desktop\\homework\\KMITL\\OOP\\PRACTICAL\\bar chart\\test\\test.cpp"
 },
 {
   "directory": "C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/build",
-  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -g -o CMakeFiles\\testhtml.dir\\test\\htmltester.cpp.obj -c \"C:\\Users\\Phoom\\Desktop\\homework\\KMITL\\OOP\\PRACTICAL\\bar chart\\test\\htmltester.cpp\"",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -I\"C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart/lib\" -g -o CMakeFiles\\testhtml.dir\\test\\htmltester.cpp.obj -c \"C:\\Users\\Phoom\\Desktop\\homework\\KMITL\\OOP\\PRACTICAL\\bar chart\\test\\htmltester.cpp\"",
   "file": "C:\\Users\\Phoom\\Desktop\\homework\\KMITL\\OOP\\PRACTICAL\\bar chart\\test\\htmltester.cpp"
 }
 ]

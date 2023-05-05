@@ -8,9 +8,9 @@
 #include <vector>
 #include <map>
 #include <cmath>
-#include "../lib/nse/html.hpp"
-#include "../lib/nse/ptr.hpp"
-#include "../lib/nse/html.cpp"
+#include "nse/html.hpp"
+#include "nse/ptr.hpp"
+#include "nse/html.cpp"
 
 class Stream_writer : public nse::html::Writer
 {
@@ -44,10 +44,6 @@ struct Data
     {
         return name == other.name && value == other.value;
     }
-};
-
-class Category
-{
 };
 
 class Classified_Info

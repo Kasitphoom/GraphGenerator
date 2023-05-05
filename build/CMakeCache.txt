@@ -274,6 +274,9 @@ Project_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/bar chart
 
+//The directory containing a CMake configuration file for doctest.
+doctest_DIR:PATH=doctest_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for fmt.
 fmt_DIR:PATH=D:/Package/lib/cmake/fmt
 
@@ -436,6 +439,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_STRIP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Path to include folder for doctest
+DOCTEST_INCLUDE_DIR:INTERNAL=/lib/doctest
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 
